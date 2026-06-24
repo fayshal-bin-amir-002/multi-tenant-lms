@@ -20,6 +20,8 @@ foreach (config('tenancy.central_domains') as $domain) {
             Route::get('/register-school', [TenantRegisterController::class, 'create'])->name('tenant.register.create');
 
             Route::post('/register-school', [TenantRegisterController::class, 'store'])->name('tenant.register.store');
+
+            Route::get('/ai-usages', [AdminController::class, 'ai_usages'])->name('ai.usages');
         });
     });
 }

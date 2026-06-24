@@ -13,6 +13,7 @@ class BrandingSettingsController extends Controller
 {
     public function index()
     {
+
         return Inertia::render('Tenant/Admin/Setting/BrandingSettings');
     }
 

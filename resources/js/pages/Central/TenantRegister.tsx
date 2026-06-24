@@ -28,8 +28,8 @@ const TenantRegister = () => {
     domain: '', // New Field
     admin_name: '',
     admin_email: '',
-    password: '',
-    password_confirmation: '',
+    password: '111111',
+    password_confirmation: '111111',
   });
 
   // School name likhle domain automatic generate hobe, kintu user edit korte parbe

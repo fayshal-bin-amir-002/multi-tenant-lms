@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Central;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tenant;
+use App\Models\Usage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -52,5 +53,16 @@ class AdminController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect()->intended(route('central.home'));
+    }
+
+    public function ai_usages()
+    {
+        $usages = Usage::query()
+            ->latest()
+            ->get();
+
+        return Inertia::render('Central/AiUsages', [
+            'usages' => $usages,
+        ]);
     }
 }

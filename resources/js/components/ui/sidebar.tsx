@@ -90,7 +90,7 @@ export function SessionNavBar() {
   return (
      <motion.div
       className={cn(
-        "sidebar fixed left-0 z-40 h-full shrink-0 border-r fixed",
+        "sidebar fixed left-0 z-40 h-full shrink-0 border-r",
       )}
       initial={isCollapsed ? "closed" : "open"}
       animate={isCollapsed ? "closed" : "open"}
@@ -155,6 +155,24 @@ export function SessionNavBar() {
                         {!isCollapsed && (
                           <div className="flex items-center gap-2">
                             <p className="ml-2 text-sm font-medium">Register School</p>
+                          </div>
+                        )}
+                      </motion.li>
+                    </Link>
+                    <Link
+                      href="/ai-usages"
+                      className={cn(
+                        "flex h-8 w-full flex-row items-center rounded-md px-2 py-1.5 transition hover:bg-muted hover:text-primary",
+
+                        pathname == "/ai-usages" &&
+                          "bg-muted text-blue-600",
+                      )}
+                    >
+                      <FileClock className="h-4 w-4" />{" "}
+                      <motion.li variants={variants}>
+                        {!isCollapsed && (
+                          <div className="flex items-center gap-2">
+                            <p className="ml-2 text-sm font-medium">Ai Usages</p>
                           </div>
                         )}
                       </motion.li>

@@ -61,6 +61,12 @@ const TenantDashboardLayout = ({ children }: Props) => {
         href: route('tenant.admin.branding-settings.index'),
         show: isAdmin,
       },
+      {
+        label: 'Ai Usages',
+        icon: Settings,
+        href: route('tenant.admin.ai-usage.index'),
+        show: isAdmin,
+      },
     ];
 
     return items.filter((item) => item.show);

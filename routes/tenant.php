@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Tenant\Admin\BrandingSettingsController;
 use App\Http\Controllers\Tenant\Admin\DashboardController;
+use App\Http\Controllers\Tenant\Admin\TenantUsageController;
 use App\Http\Controllers\Tenant\Admin\UserController;
 use App\Http\Controllers\Tenant\Student\DashboardController as StudentDashboardController;
 use App\Http\Controllers\Tenant\Teacher\DashboardController as TeacherDashboardController;
@@ -47,6 +48,8 @@ Route::middleware([
         Route::post('/user/bulk-upload', [UserController::class, 'bulkUpload'])->name('user.bulk-upload');
 
         Route::resource('/branding-settings', BrandingSettingsController::class);
+
+        Route::resource('/ai-usage', TenantUsageController::class)->only(['index', 'store']);
     });
 
     // tenants teacher routes
